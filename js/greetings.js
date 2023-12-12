@@ -10,7 +10,7 @@ function onLoginSubmit(event){
     loginForm.classList.add(HIDDEN_CLASSNAME)
     const userName = loginInput.value
     localStorage.setItem(USERNAME_KEY, userName)
-    paintGreetings(savedUsername)
+    paintGreetings(userName)
 }
 
 function paintGreetings(userName){
@@ -24,5 +24,6 @@ if(savedUsername ===null){
     loginForm.classList.remove(HIDDEN_CLASSNAME)
     loginForm.addEventListener("submit", onLoginSubmit)
 } else {
+    loginForm.classList.add(HIDDEN_CLASSNAME)
     paintGreetings(savedUsername)
 }
